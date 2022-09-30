@@ -1,5 +1,5 @@
 import Head from "next/head"
-
+{/* <Head title="" cardTitle="" description=""></Head> */}
 export default function HeadTag({
    title = 'Resume',
    cardTitle = 'Rief Reed',
