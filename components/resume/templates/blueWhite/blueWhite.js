@@ -19,17 +19,16 @@ export default function ResumePage(){
   
 const [toggleMenu, setMenu] = useState(<GetStarted></GetStarted>);
 return(
-    <main className="font-sans overflowhidden relative h-screen flex flex-row items-start justify-center p-10 bg-blue-600">
+    <main className="font-sans overflow-hidden relative h-screen flex flex-row items-start justify-center p-10 bg-blue-600">
       <div className="bg-red500 h-full w-1/2 p-2 rounded  z-50 bggray-900/40  flex flex-col items-start justify-start">
       {toggleMenu}
       </div>
-      <div className="bg-red500 h- rotate-6 w-1/2  translate-y48 scale-90 select-none  ">
+      <div className="bg-red500 h- rotate-6 md:w-1/2  translate-y48 scale-90 select-none  ">
         <Resume NameTitleImg={NameTitleImg} restData={restData}></Resume>
       </div>
     </main>
   );
 }
-
 function GetStarted(){
 
 const [message, setMessage] = useState("");
@@ -41,7 +40,7 @@ await auth.signInWithPopup(googleAuthProvider)
           // const {user,username} = useContext(UserContext);
           console.log(response);
           console.log(response.user.uid);
-          window.location.replace(`/tools/resume/${response.user.uid}`);
+          window.location.replace(`/resume/${response.user.uid}`);
 
     })
     .catch((e)=>{
@@ -52,7 +51,7 @@ await auth.signInWithPopup(googleAuthProvider)
 
 
   return(
-    <div className="bg-gray-800/40 rounded blu h-5/6  sm:p-0  sm:bg-transparent p-10 sm:pt-20 space-y3  font-normal absolute top-auto font-sans left-20 text-white">
+    <div className="bg-gray-800/50 rounded blu h-full  sm:p-0  sm:bg-transparent p-10 sm:pt-20 space-y3  font-normal a font-sans 20 text-white">
        <Logo></Logo>
        <div className="text-3xl pt-20 sm:w-full w-[270px] ">
         Only 3% of resume make it past the first round.
